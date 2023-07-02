@@ -7,8 +7,9 @@ import javascriptLogo from "../assets/img/javascript.svg";
 
 import "../scss/style.scss";
 
-const header = __(".header__inner");
-header[0].classList.add("flex-all-center");
+const header = __(".header__inner").addClass("flex-all-center");
+// header[0].classList.add("flex-all-center");
+
 header[0].innerHTML = `
   <a href="https://vitejs.dev" target="_blank">
     <img src="${viteLogo}" class="logo" alt="Vite logo" />
@@ -23,3 +24,7 @@ header[0].innerHTML = `
 setupCounter(__("#counter")[0]);
 
 __("div").show();
+
+__(".btn").on("click", function () {
+  __(this).toggleClass("active");
+});
